@@ -10,7 +10,6 @@ def su_test(case=0, k=0):
     for t in range(k):
         a = randint(2, case - 2)  # 2 <= a <= (m-2)
         print(f"Choose a{t} = {a}")
-        print()
         g = gcd(a, case)  # 先求最大公因数
         if g != 1:
             print("m 为合数")
