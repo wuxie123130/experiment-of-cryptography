@@ -4,7 +4,6 @@ from math import gcd
 import gmpy2
 
 
-
 def su_test(case=0, k=0):
     print(f"Get m = {case}")
     print(f"m 的长度为:", len(str(case)))
