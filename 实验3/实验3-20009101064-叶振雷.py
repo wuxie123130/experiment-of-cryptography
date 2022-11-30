@@ -1,6 +1,6 @@
 import random
 import sys
-from math import prod, gcd
+import math
 
 
 # 检查列表互素函数
@@ -9,14 +9,14 @@ def mutual_prime_check(m: list):
     size = len(m)
     for i in range(size):
         for j in range(i + 1, size):
-            if gcd(m[i], m[j]) != 1:
+            if math.gcd(m[i], m[j]) != 1:
                 return False
     return True
 
 
 # 扩展欧几里得算法求模逆
 def find_mod_reverse(a: int, m: int):
-    if gcd(a, m) != 1:
+    if math.gcd(a, m) != 1:
         return None
     u1, u2, u3 = 1, 0, a
     v1, v2, v3 = 0, 1, m
@@ -38,7 +38,7 @@ def crt(equation_num: int, a_list: list, m_list: list):
         print()
         return
     # 求乘积
-    m = prod(m_list)
+    m = math.prod(m_list)
     # 求Mj
     mj = [m // _m for _m in m_list]
     # 求Mj的逆
@@ -74,11 +74,11 @@ def find_d1(n, t):
 def encrypt(k, t, n):
     # 前t组相乘计算N
     d_seq = find_d1(n, t)
-    n_sum = prod(d_seq[0:t])
+    n_sum = math.prod(d_seq[0:t])
     print(f"N: {n_sum}")
     print()
     # 后t-1组相乘计算N
-    m_sum = prod(d_seq[n - t + 1:n])
+    m_sum = math.prod(d_seq[n - t + 1:n])
     print(f"M: {m_sum}")
     print()
     # 需要满足n_sum > k > m_sum
