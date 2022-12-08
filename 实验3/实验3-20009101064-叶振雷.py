@@ -1,7 +1,7 @@
 import random
 import sys
 import math
-
+from sklearn.feature_extraction import DictVectorizer
 
 # 检查列表互素函数
 def mutual_prime_check(m: list):
